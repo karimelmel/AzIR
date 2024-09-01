@@ -1,6 +1,6 @@
  <#
 .SYNOPSIS
-    A super-function to Invoke-MemoryCollection process for forensic memory on Azure Virtual Machinesd.
+    A super-function to Invoke-MemoryCollection process for forensic memory on Azure Virtual Machines.
 
 .DESCRIPTION
     Triggers four distinctive functions as a single line to download required prerequisities and unzip the package, run the executable to acquire volatile memory and then upload the data to an Azure Storage Account.
