@@ -19,7 +19,7 @@ Examples:
         python run_command.py --vm_name myAzureVM --cloud_provider azure --script_path /path/to/script.ps1 --resource_group myResourceGroup --subscription_id mySubscriptionId
 
     AWS:
-        python run_command.py --vm_name myAWSVM --cloud_provider aws --script_path /path/to/script.ps1 --instance_id i-1234567890abcdef0
+        python run_command.py --cloud_provider aws --script_path /path/to/script.ps1 --instance_id i-1234567890abcdef0
 
     GCP:
         python run_command.py --vm_name myGCPVM --cloud_provider gcp --script_path /path/to/script.ps1 --project my-gcp-project --zone us-central1-a
@@ -121,7 +121,7 @@ def run_command(vm_name, cloud_provider, script_path, resource_group=None, insta
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run a PowerShell script on a VM in Azure, AWS, or GCP.")
-    parser.add_argument('--vm_name', required=True, help='Name of the virtual machine')
+    parser.add_argument('--vm_name', help='Name of the virtual machine')
     parser.add_argument('--cloud_provider', required=True, choices=['azure', 'aws', 'gcp'], help='Cloud provider (azure, aws, gcp)')
     parser.add_argument('--script_path', required=True, help='Path to the PowerShell script')
     parser.add_argument('--resource_group', help='Resource group name (required for Azure)')
